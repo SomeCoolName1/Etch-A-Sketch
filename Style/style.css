@@ -1,0 +1,30 @@
+.slidercontainer {
+  width: 25%;
+}
+
+.slider {
+  appearance: none;
+  width: 25%;
+  height: 25px;
+  background-color: blue;
+  outline: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+#gridContainer {
+  display: grid;
+  width: 500px;
+  height: 500px;
+  background-color: gray;
+  box-shadow: black;
+}
+
+.button {
+  display: flex;
+  justify-content: row;
+}
