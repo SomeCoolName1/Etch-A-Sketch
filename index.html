@@ -14,13 +14,16 @@
     <div class='gridContainer'>
         <div class="button">
             <li>
-                <button id="Reset" onclick="newGrid()">Reset
+                <button id="Color" onclick="mode('colorMode')">Color
                 </button>
             </li>
             <li>
-                <button id="Rainbow">Rainbow</button>
+                <button id="Rainbow" onclick="mode('rainbowMode')">Rainbow</button>
             </li>
-            <li>Ayabe</li>
+            <li><button id="Eraser" onclick="mode('eraserMode')">Eraser</button></li>
+            <li><button id="Reset" onclick="newGrid()">Reset
+                </button></li>
+
         </div>
 
         <div id="gridBoxes">
@@ -28,16 +31,19 @@
         <div class="colorContainer">
             <input type="color" value="#000000" id="colorId" onchange="changeColor(event)">
         </div>
-
     </div>
 
-
     <div class="slideContainer">
-        <p>Grid Size: <span id="demo"></span> x <span id="demo2"></span></p>
+        <div class="sliderText">
+            <p>Grid Size: <span id="demo"></span> x <span id="demo2"></span></p>
+        </div>
         <input type="range" min="16" max="32" value="1" class="slider" id="myRange" oninput="updateSliderValue(event)">
 
 
     </div>
+
+
+
 
 
     <script src='app.js'>

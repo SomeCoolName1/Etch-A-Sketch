@@ -6,6 +6,7 @@ function setupGrid(size) {
     const gridDiv = document.createElement("div");
     gridDiv.classList.add("grid");
     gridDiv.addEventListener("mouseover", changeColor1);
+    gridDiv.addEventListener("mousedown", changeColor1);
     gridBoxes.appendChild(gridDiv);
   }
 }
@@ -23,6 +24,7 @@ function updateSliderValue(e) {
   size = e.target.value;
   setupGrid(e.target.value);
   console.log("size value: " + e.target.value);
+  newGrid();
 }
 
 window.onload = () => {
@@ -34,23 +36,37 @@ var currentColor = "#000000";
 function changeColor(e) {
   console.log("Color hex: " + e.target.value);
   currentColor = e.target.value;
-  // e.target.style.backgroundColor = currentColor;
 }
-
-// function setCurrentColor(newColor) {
-//   currentColor = newColor;
-// }
-
-function changeColor1(e) {
-  e.target.style.backgroundColor = currentColor;
-}
-
-// const reset = document.getElementById("Reset");
-// reset.addEventListener("click", newGrid);
 
 function newGrid() {
   const gridBoxes = document.getElementById("gridBoxes");
   gridBoxes.innerHTML = "";
   console.log(size);
   setupGrid(size);
+}
+
+var currentMode = "colorMode";
+
+function changeColor1(e) {
+  if (currentMode == "eraserMode") {
+    e.target.style.backgroundColor = "#fefefe";
+  } else if (currentMode == "rainbowMode") {
+    const randomR = Math.floor(Math.random() * 256);
+    const randomG = Math.floor(Math.random() * 256);
+    const randomB = Math.floor(Math.random() * 256);
+    e.target.style.backgroundColor = `rgb(${randomR}, ${randomG}, ${randomB})`;
+  } else if (currentMode == "colorMode") {
+    e.target.style.backgroundColor = currentColor;
+  }
+}
+
+function mode(modeEvent) {
+  console.log(modeEvent);
+  if (modeEvent == "eraserMode") {
+    currentMode = "eraserMode";
+  } else if (modeEvent == "rainbowMode") {
+    currentMode = "rainbowMode";
+  } else if (modeEvent == "colorMode") {
+    currentMode = "colorMode";
+  }
 }
