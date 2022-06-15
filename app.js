@@ -2,7 +2,7 @@ function setupGrid(size) {
   gridContainer.style.gridTemplateRows = `repeat(${size}, 1fr)`;
   gridContainer.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
 
-  for (i = 0; i < size; i++) {
+  for (i = 0; i < size * size; i++) {
     const gridDiv = document.createElement("div");
     gridDiv.classList.add("grid");
     gridDiv.addEventListener("mouseover", changeColor1);
@@ -27,12 +27,12 @@ var currentColor = "#fefefe";
 
 function changeColor(e) {
   console.log("Color hex: " + e.target.value);
-  setCurrentColor(e.target.value);
+  currentColor = e.target.value;
 }
 
-function setCurrentColor(newColor) {
-  currentColor = newColor;
-}
+// function setCurrentColor(newColor) {
+//   currentColor = newColor;
+// }
 
 function changeColor1(e) {
   e.target.style.backgroundColor = currentColor;
