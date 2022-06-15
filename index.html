@@ -7,27 +7,37 @@
 </head>
 
 <body>
-    <div class="title">Etch-A-Sketch</div>
-    <div id='gridContainer'>
+    <div class="heading">
+        <div class="title">Etch-A-Sketch</div>
+        <div class="subTitle">Happy Little Accidents</div>
+    </div>
+    <div class='gridContainer'>
+        <div class="button">
+            <li>
+                <div class="Reset">Reset</div>
+            </li>
+            <li>
+                <div class="Rainbow">Rainbow</div>
+            </li>
+            <li>Ayabe</li>
+        </div>
+
+        <div id="gridBoxes">
+        </div>
+        <div class="colorContainer">
+            <input type="color" value="#ff0000" id="colorId" onchange="changeColor(event)">
+        </div>
 
     </div>
 
-    <div class="colorContainer">
-        <input type="color" value="#ff0000" id="colorId" onchange="changeColor(event)">
-    </div>
 
     <div class="slideContainer">
         <p>Value: <span id="demo"></span></p>
-        <input type="range" min="1" max="100" value="1" class="slider" id="myRange">
+        <input type="range" min="16" max="32" value="1" class="slider" id="myRange" oninput="updateSliderValue(event)">
 
 
     </div>
 
-    <div class="button">
-        <li>Reset</li>
-        <li>Rainbow</li>
-        <li>Ayabe</li>
-    </div>
 
     <script src='app.js'>
     </script>
