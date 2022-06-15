@@ -14,10 +14,11 @@
     <div class='gridContainer'>
         <div class="button">
             <li>
-                <div class="Reset">Reset</div>
+                <button id="Reset" onclick="newGrid()">Reset
+                </button>
             </li>
             <li>
-                <div class="Rainbow">Rainbow</div>
+                <button id="Rainbow">Rainbow</button>
             </li>
             <li>Ayabe</li>
         </div>
@@ -25,14 +26,14 @@
         <div id="gridBoxes">
         </div>
         <div class="colorContainer">
-            <input type="color" value="#ff0000" id="colorId" onchange="changeColor(event)">
+            <input type="color" value="#000000" id="colorId" onchange="changeColor(event)">
         </div>
 
     </div>
 
 
     <div class="slideContainer">
-        <p>Value: <span id="demo"></span></p>
+        <p>Grid Size: <span id="demo"></span> x <span id="demo2"></span></p>
         <input type="range" min="16" max="32" value="1" class="slider" id="myRange" oninput="updateSliderValue(event)">
 
 

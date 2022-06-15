@@ -12,10 +12,15 @@ function setupGrid(size) {
 
 var slider = document.getElementById("myRange");
 var output = document.getElementById("demo");
+var output2 = document.getElementById("demo2");
+var size = slider.value;
 output.innerHTML = slider.value;
+output2.innerHTML = slider.value;
 
 function updateSliderValue(e) {
   output.innerHTML = e.target.value;
+  output2.innerHTML = e.target.value;
+  size = e.target.value;
   setupGrid(e.target.value);
   console.log("size value: " + e.target.value);
 }
@@ -24,7 +29,7 @@ window.onload = () => {
   setupGrid(16);
 };
 
-var currentColor = "#fefefe";
+var currentColor = "#000000";
 
 function changeColor(e) {
   console.log("Color hex: " + e.target.value);
@@ -38,4 +43,14 @@ function changeColor(e) {
 
 function changeColor1(e) {
   e.target.style.backgroundColor = currentColor;
+}
+
+// const reset = document.getElementById("Reset");
+// reset.addEventListener("click", newGrid);
+
+function newGrid() {
+  const gridBoxes = document.getElementById("gridBoxes");
+  gridBoxes.innerHTML = "";
+  console.log(size);
+  setupGrid(size);
 }

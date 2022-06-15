@@ -1,3 +1,7 @@
+body {
+  background-color: rgb(161, 161, 161);
+}
+
 .heading {
   display: flex;
   justify-content: center;
@@ -11,18 +15,21 @@
 }
 
 .subTitle {
-  font-size: 18px;
+  font-size: 14px;
 }
 
 .slidercontainer {
   width: 25%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .slider {
   appearance: none;
   width: 25%;
   height: 25px;
-  background-color: blue;
+  background-color: black;
   outline: none;
   opacity: 0.7;
   transition: opacity 0.2s;
@@ -34,7 +41,7 @@
 
 .gridContainer {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
 }
 
@@ -42,7 +49,7 @@
   display: grid;
   width: 500px;
   height: 500px;
-  background-color: gray;
+  background-color: white;
   box-shadow: 0 0 20px black;
   border-color: solid black;
 }
