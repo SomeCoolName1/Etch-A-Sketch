@@ -22,9 +22,14 @@
   height: 500px;
   background-color: gray;
   box-shadow: black;
+  justify-content: center;
 }
 
 .button {
   display: flex;
   justify-content: row;
+}
+
+#colorPicker {
+  border: 3px solid rgba(black);
 }

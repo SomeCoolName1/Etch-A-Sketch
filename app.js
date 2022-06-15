@@ -1,24 +1,13 @@
-// for (i = 0; i < size * size; i++) {
-//   const gridContainer = document.getElementbyId("#gridContainer");
-//   const gridDiv = document.createElement("div");
-//   gridDiv.classList.add("grid");
-//   gridDiv.textContent = "test";
-//   gridContainer.appendChild(gridDiv);
-// }
 function setupGrid(size) {
-  gridContainer.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
   gridContainer.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+  gridContainer.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
 
   for (i = 0; i < size; i++) {
     const gridDiv = document.createElement("div");
     gridDiv.classList.add("grid");
-    gridDiv.addEventListener("mouseover", changeGridColor);
+    gridDiv.addEventListener("mouseover", changeColor1);
     gridContainer.appendChild(gridDiv);
   }
-}
-
-function changeGridColor(e) {
-  e.target.style.backgroundColor = "#fefefe";
 }
 
 var slider = document.getElementById("myRange");
@@ -33,3 +22,18 @@ slider.oninput = function () {
 window.onload = () => {
   setupGrid(16);
 };
+
+var currentColor = "#fefefe";
+
+function changeColor(e) {
+  console.log("Color hex: " + e.target.value);
+  setCurrentColor(e.target.value);
+}
+
+function setCurrentColor(newColor) {
+  currentColor = newColor;
+}
+
+function changeColor1(e) {
+  e.target.style.backgroundColor = currentColor;
+}
