@@ -12,40 +12,36 @@
         <div class="subTitle">Happy Little Accidents</div>
     </div>
     <div class='gridContainer'>
-        <div class="button">
-            <li>
-                <button id="Color" onclick="mode('colorMode')">Color
-                </button>
-            </li>
-            <li>
-                <button id="Rainbow" onclick="mode('rainbowMode')">Rainbow</button>
-            </li>
-            <li><button id="Eraser" onclick="mode('eraserMode')">Eraser</button></li>
-            <li><button id="Reset" onclick="newGrid()">Reset
-                </button></li>
-
+        <div class="buttonOuter">
+            <div class="button">
+                <li>
+                    <button id="Color" onclick="mode('colorMode')">Color
+                    </button>
+                </li>
+                <li>
+                    <button id="Rainbow" onclick="mode('rainbowMode')">Rainbow</button>
+                </li>
+                <li><button id="Eraser" onclick="mode('eraserMode')">Eraser</button></li>
+                <li><button id="Reset" onclick="newGrid()">Reset
+                    </button></li>
+            </div>
         </div>
-
         <div id="gridBoxes">
         </div>
-        <div class="colorContainer">
-            <input type="color" value="#000000" id="colorId" onchange="changeColor(event)">
+        <div class="colourOuter">
+            <div class="colorContainer">
+                <input type="color" value="#000000" id="colorId" onchange="changeColor(event)">
+            </div>
         </div>
     </div>
-
     <div class="slideContainer">
         <div class="sliderText">
             <p>Grid Size: <span id="demo"></span> x <span id="demo2"></span></p>
         </div>
         <input type="range" min="16" max="32" value="1" class="slider" id="myRange" oninput="updateSliderValue(event)">
-
-
     </div>
 
-
-
-
-
+    <div class="footer">Webpage by Tuan Anh Pham</div>
     <script src='app.js'>
     </script>
 </body>

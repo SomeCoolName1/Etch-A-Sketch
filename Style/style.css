@@ -1,5 +1,9 @@
 body {
   background-color: rgb(207, 211, 223);
+  margin: 0;
+  padding: 0;
+  position: relative;
+  min-height: 100vh;
 }
 
 .heading {
@@ -62,10 +66,17 @@ body {
 
 .gridContainer {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding-top: 50px;
-  gap: 100px;
+  gap: 50px;
+  padding-bottom: 2.5rem;
+}
+
+.buttonOuter,
+.colourOuter {
+  display: flex;
+  flex: 1;
 }
 
 #gridBoxes {
@@ -76,15 +87,16 @@ body {
   box-shadow: 0 0 20px black;
   border-color: solid black;
 }
+.buttonOuter {
+  align-items: center;
+  justify-content: right;
+}
 
 .button {
   display: flex;
   flex-direction: column;
   list-style: none;
-  align-items: center;
-  justify-content: center;
   gap: 50px;
-  flex: 1;
 }
 
 #colorPicker {
@@ -92,7 +104,6 @@ body {
 }
 
 .colorContainer {
-  flex: 1;
   border-radius: 100%;
   width: 100px;
   height: 100px;
@@ -121,7 +132,6 @@ input[type="color"] {
 #Eraser {
   height: 50px;
   width: 200px;
-
   border-radius: 5px;
   font-size: 20px;
 }
@@ -132,4 +142,20 @@ input[type="color"] {
 #Eraser:hover {
   transform: scale(1.05);
   transition: transform 0.05s ease-in-out;
+}
+
+#Reset:active,
+#Rainbow:focus,
+#Color:focus,
+#Eraser:focus {
+  background-color: black;
+  color: white;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+  text-align: center;
 }
